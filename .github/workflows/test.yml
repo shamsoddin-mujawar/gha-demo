@@ -2,7 +2,8 @@ name: "TESTING"
 on: workflow_dispatch
 jobs:
   test:
+    environment: Test
     runs-on: ubuntu-latest
     steps:
       - name: printing hello world
-        run: echo "${{ secrets.USERNAME2 }}"
+        run: echo "${{ secrets.PASS }}"
