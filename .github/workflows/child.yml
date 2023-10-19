@@ -1,0 +1,9 @@
+name: CHILD_WORKFLOWS
+on: workflow_call
+jobs:
+  child-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: child_workflow
+        run: |
+          echo "Event name - ${{ github.event_name }}"
