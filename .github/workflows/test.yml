@@ -1,5 +1,13 @@
 name: "TESTING"
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs: 
+      name:
+        description: "Enter number"
+        default: "1"
 jobs:
   test:
-    uses: ./.github/workflows/child.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: number
+        run: echo "${{ inputs.name }}"
