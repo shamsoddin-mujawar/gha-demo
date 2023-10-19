@@ -6,9 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: set environment value
+        id: out
         run: |
-          echo "add=15" >> "$GITHUB_ENV"
-      
+          echo "add=15" >> "$GITHUB_OUTPUT"
+
       - name: print env value
-        run: echo "variable value is - $add"
+        run: echo "variable value is - ${{ steps.out.outputs.add }}"
           
