@@ -1,9 +1,14 @@
-
 name: "TESTING"
 on: workflow_dispatch
-jobs: 
+jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: printing hello world
         run: echo "Hello World"
+  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: echo "building"
