@@ -1,13 +1,13 @@
 name: "TESTING"
-on: 
-  workflow_dispatch:
-    inputs: 
-      name:
-        description: "Enter number"
-        default: "1"
+on:
+  workflow_dispatch: 
+env: 
+  MY_VAR: "qa4"
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: number
-        run: echo "${{ inputs.name }}"
+        run: |
+          echo "$MY_VAR"
+          echo "${{ env.MY_VAR }}"
