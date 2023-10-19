@@ -5,11 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: printing hello world
-        run: echo "Hello World"
-  
-  build:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: build
-        run: echo "building"
+        run: echo "${{ secrets.USERNAME2 }}"
