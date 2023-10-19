@@ -1,1 +1,5 @@
-
+name: SAME_REPO_PARENT
+on: workflow_dispatch
+jobs:
+  Parent-job:
+      uses: ./.github/workflows/child.yml
