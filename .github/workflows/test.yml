@@ -2,8 +2,4 @@ name: "TESTING"
 on: workflow_dispatch
 jobs:
   test:
-    environment: Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: printing hello world
-        run: echo "${{ secrets.PASS }}"
+    uses: ./.github/workflows/child.yml
