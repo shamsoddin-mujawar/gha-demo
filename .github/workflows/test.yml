@@ -1,13 +1,14 @@
 name: "TESTING"
 on:
-  workflow_dispatch: 
-env: 
-  MY_VAR: "qa4"
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: number
+      - name: set environment value
         run: |
-          echo "$MY_VAR"
-          echo "${{ env.MY_VAR }}"
+          echo "add=15" >> "$GITHUB_ENV"
+      
+      - name: print env value
+        run: echo "variable value is - $add"
+          
