@@ -7,6 +7,11 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: list
+        run: |
+        pwd
+        ls
         
       - name: calling action
         uses: ./test_action
