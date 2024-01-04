@@ -10,8 +10,8 @@ jobs:
 
       - name: list
         run: |
-        pwd
-        ls
+            pwd
+            ls
         
       - name: calling action
         uses: ./test_action
