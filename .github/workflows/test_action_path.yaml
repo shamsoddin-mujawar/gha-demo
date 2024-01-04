@@ -1,0 +1,13 @@
+name: FIRST_TEST_WORKFLOWS
+on: workflow_dispatch
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: calling action
+        uses: ./test_action
+        with:
+          a: 3
+          b: 2
+
+
