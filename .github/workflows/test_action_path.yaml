@@ -4,6 +4,10 @@ jobs:
   test-job:
     runs-on: ubuntu-latest
     steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
       - name: calling action
         uses: ./test_action
         with:
