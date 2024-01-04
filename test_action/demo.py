@@ -1,7 +1,11 @@
 import os
 import sys
+
+# Ask chatGPT for the difference of below two lines.
+# os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+# os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))) 
-sys.path.append(os.path.dirname(__file__))
 from common import common_methods
 
 
