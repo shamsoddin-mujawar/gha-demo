@@ -1,1 +1,28 @@
+name: "test action"
+description: "testing action for path and import module or file from another folder"
+inputs:
+  a:
+    description: "a variable"
+    required: true
+    default: '5'
+  b:
+    description: "b variable"
+    required: true
+    default: '5'
+outputs:
+  sum:
+    description: "storing the a and b value result"
+    value: ${{ steps.result.outputs.sum }}
+runs:
+  using: composite
+  steps:
+    - name: calling python file
+      id: result
+      shell: bash
+      env:
+        A : ${{ inputs.a }}
+        B : ${{ inputs.b }}
+      run: |
+        python3 ${{ github.action_path }}/demo.py
+
 
