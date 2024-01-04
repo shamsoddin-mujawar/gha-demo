@@ -12,8 +12,14 @@ jobs:
         run: |
             pwd
             ls
-        
-      - name: calling action
+            
+      - name: calling action 1
+        uses: ./test_action
+        with:
+          a: 7
+          b: 5
+          
+      - name: calling action 2
         uses: shamsoddin-mujawar/gha-demo/test_action@main
         with:
           a: 3
