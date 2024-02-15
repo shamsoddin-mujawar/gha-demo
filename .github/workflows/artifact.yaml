@@ -1,0 +1,32 @@
+name: "Test artifact"
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: set environment value
+        run: |
+          echo tag > variable.txt
+          echo "name=variable.txt" >> "$GITHUB_ENV"
+      
+      - name: upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: variable
+          path: ${{ env.name }}
+          
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: download artifact
+        uses: actions/download-artifact@v3
+        with: 
+          name: variable
+        
+      - name: print data
+        run: |
+          value=`cat variable.txt`
+          echo "value is - $value"
