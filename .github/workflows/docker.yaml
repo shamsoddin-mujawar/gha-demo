@@ -1,0 +1,27 @@
+name: build docker image
+on:
+  workflow_dispatch:
+jobs:
+  build-docker-image:
+    name: build image
+    runs-on: arc-runner-qa4-post-merge-lacework
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./docker/ingress/Dockerfile
+          tags: user/app:latest
+
+      - name: ls
+        run: |
+          docker images
+          
