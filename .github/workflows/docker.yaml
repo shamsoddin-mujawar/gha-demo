@@ -23,5 +23,5 @@ jobs:
 
       - name: ls
         run: |
-          docker images
+          docker run -dt user/app:latest
           
